@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    float: left;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.buttons {
+    float: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f05050;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d94141;
+}
+
+.hero {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.hero h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    margin-bottom: 40px;
+}
+
+.hero-images {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: -100px;
+    overflow: hidden;
+}
+
+.hero-images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hero-images img:nth-child(1) {
+    z-index: 3;
+}
+
+.hero-images img:nth-child(2) {
+    z-index: 2;
+}
+
+.hero-images img:nth-child(3) {
+    z-index: 1;
+}
+
+.features {
+    padding: 100px 0;
+    background-color: #f7f7f7;
+}
+
+.features h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.feature-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature-item {
+    width: 30%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feature-item img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.advantages {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.advantages h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.advantage-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.advantage-item {
+    width: 48%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.advantage-item img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.advantage-item h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.testimonials {
+    padding: 100px 0;
+    background-color: #f7f7f7;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.testimonial-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimonial-item {
+    width: 23%;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.testimonial-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.testimonial-item h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testimonial-item p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial-item h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+}
+
+.rating img {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.faq {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.faq h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.faq-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.faq-item {
+    width: 48%;
+    margin-bottom: 40px;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.faq-item h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.cta {
+    padding: 100px 0;
+    background-color: #f7f7f7;
+}
+
+.cta h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.cta-buttons .btn {
+    margin-right: 20px;
+}
+
+.cta-buttons img {
+    width: 100px;
+    height: auto;
+}
+
+.cta-images {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: -100px;
+    overflow: hidden;
+}
+
+.cta-images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.cta-images img:nth-child(1) {
+    z-index: 3;
+}
+
+.cta-images img:nth-child(2) {
+    z-index: 2;
+}
+
+.cta-images img:nth-child(3) {
+    z-index: 1;
+}
+
+footer {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-links,
+.footer-legal,
+.footer-product,
+.footer-newsletter {
+    display: inline-block;
+    margin: 0 40px;
+    text-align: left;
+}
+
+.footer-links ul,
+.footer-legal ul,
+.footer-product ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-legal li,
+.footer-product li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-legal a,
+.footer-product a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-newsletter p {
+    margin-bottom: 10px;
+}
+
+.footer-newsletter form {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #f05050;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: #d94141;
+}
+
+.copyright {
+    margin-top: 40px;
+}
+
+.copyright p {
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    .hero-images {
+        height: 300px;
+    }
+
+    .feature-items,
+    .advantage-items,
+    .testimonial-items,
+    .faq-items {
+        flex-direction: column;
+    }
+
+    .feature-item,
+    .advantage-item,
+    .testimonial-item,
+    .faq-item {
+        width: 100%;
+    }
+
+    .footer-links,
+    .footer-legal,
+    .footer-product,
+    .footer-newsletter {
+        display: block;
+        margin-bottom: 40px;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uifry - The Best Financial Decisions</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Uifry Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Features</a></li>
+                </ul>
+            </nav>
+            <div class="buttons">
+                <a href="#" class="btn">Download</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Make The Best Financial Decisions</h1>
+            <p>Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Get Started</a>
+                <a href="#" class="btn">Watch Video</a>
+            </div>
+            <div class="hero-images">
+                <img src="phone1.png" alt="Phone 1">
+                <img src="phone2.png" alt="Phone 2">
+                <img src="phone3.png" alt="Phone 3">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Uifry Premium</h2>
+            <div class="feature-items">
+                <div class="feature-item">
+                    <img src="icon1.png" alt="Icon 1">
+                    <h3>Budgeting Intervals</h3>
+                    <p>Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="icon2.png" alt="Icon 2">
+                    <h3>Budgeting Intervals</h3>
+                    <p>Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="icon3.png" alt="Icon 3">
+                    <h3>Budgeting Intervals</h3>
+                    <p>Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <h2>Why Choose Uifry?</h2>
+            <div class="advantage-items">
+                <div class="advantage-item">
+                    <img src="icon4.png" alt="Icon 4">
+                    <h3>Clever Notifications</h3>
+                    <p>Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultricies Malesuada Elit Mauris Etiam Odio. Duis Tristique Lacus, Et Blandit Viverra Nisl Velit. Sed Mattis Rhoncus, Diam Suspendisse Sit Nunc, Gravida Eu. Lectus Eget Eget Ac Dolor Neque Lorem Sapien, Suspendisse Aliquam.</p>
+                </div>
+                <div class="advantage-item">
+                    <img src="icon5.png" alt="Icon 5">
+                    <h3>Fully Customizable</h3>
+                    <p>Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris Etiam Odio. Duis Tristique Lacus, Et Blandit Viverra Nisl Velit. Sed Mattis Rhonous, Diam Suspendisse Sit Nunc, Gravida Eu. Lectus Eget Eget Ac Dolor Neque Lorem Sapien, Suspendisse Aliquam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say About Us?</h2>
+            <div class="testimonial-items">
+                <div class="testimonial-item">
+                    <img src="user1.png" alt="User 1">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris Etiam Odio. Duis Tristique Lacus, Et Blandit Viverra Nisl Velit. Sed Mattis Rhoncus, Diam Suspendisse Sit Nunc, Gravida Eu. Lectus Eget Eget Ac Dolor Neque Lorem Sapien, Suspendisse Aliquam."</p>
+                    <h4>Nick Jonas</h4>
+                    <div class="rating">
+                        <img src="star.png" alt="Star">
+                        <img src="star.png" alt="Star">
+                        <img src="star.png" alt="Star">
+                        <img src="star.png" alt="Star">
+                        <img src="star.png" alt="Star">
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <img src="user2.png" alt="User 2">
+                </div>
+                <div class="testimonial-item">
+                    <img src="user3.png" alt="User 3">
+                </div>
+                <div class="testimonial-item">
+                    <img src="user4.png" alt="User 4">
+                </div>
+                <div class="testimonial-item">
+                    <img src="user5.png" alt="User 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>The Best Financial Accounting App Ever!</h3>
+                    <p>"Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Accumsan, Ultricies. In Ultrices Malesuada Elit Mauris.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready To Get Started?</h2>
+            <p>Risus Habitant Leo Egestas Mauris Diam Eget Morbi Tempus Vulputate.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Download App</a>
+                <img src="apple-store.png" alt="Apple Store">
+            </div>
+            <div class="cta-images">
+                <img src="phone4.png" alt="Phone 4">
+                <img src="phone5.png" alt="Phone 5">
+                <img src="phone6.png" alt="Phone 6">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Uifry Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Bookings</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-legal">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-product">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Take Tour</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Stay Up To Date</p>
+                <form action="#">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2022 Uifry.Com All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
